@@ -1,4 +1,4 @@
-Example simple chat application built in java and manage by maven:
+Example simple chat application built in java and managed by maven:
 -  Demonstates Java's networking capabilities to send and receive messages between clients and a server. 
 - to build jar locally use:  mvn clean package
 
