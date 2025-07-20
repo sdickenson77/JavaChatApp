@@ -8,6 +8,10 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+/**
+ * GUI for the chat client application.
+ */
+
 public class ChatClientGUI extends JFrame {
     private final JTextArea messageArea;
     private final JTextField textField;
@@ -19,9 +23,9 @@ public class ChatClientGUI extends JFrame {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         // Styling variables
-        Color backgroundColor = new Color(240, 240, 240); // Light gray background
-        Color buttonColor = new Color(75, 75, 75); // Darker gray for buttons
-        Color textColor = new Color(50, 50, 50); // Almost black for text
+        Color backgroundColor = new Color(0, 0, 0); // Light gray background
+        Color buttonColor = new Color(31, 185, 20); // Darker gray for buttons
+        Color textColor = new Color(255, 255, 255); // Almost black for text
         Font textFont = new Font("Arial", Font.PLAIN, 14);
         Font buttonFont = new Font("Arial", Font.BOLD, 12);
 
@@ -93,11 +97,14 @@ public class ChatClientGUI extends JFrame {
         }
     }
 
+
+     //Handles incoming messages and updates the UI.
     private void onMessageReceived(String message) {
         // Use SwingUtilities.invokeLater to ensure thread safety when updating the GUI
         SwingUtilities.invokeLater(() -> messageArea.append(message + "\n"));
     }
 
+    //Application entry point.
     public static void main(String[] args) {
         // Ensure the GUI is created and updated on the Event Dispatch Thread
         SwingUtilities.invokeLater(() -> new ChatClientGUI().setVisible(true));
